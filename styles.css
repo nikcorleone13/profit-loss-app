@@ -1,7 +1,27 @@
 body{
+    background-color:cyan;
     text-align: center;
 }
-label{
+main{
+
+}
+input,label{
+    margin:.5rem auto;
     display: block;
     padding-top: 1rem;
+    border-radius: 7px ;
+    width: 50vw;
+    text-align: center;
+    
+}
+button{
+    margin: 2rem auto;
+    display: block;
+    padding: 5px;
+    color: white;
+    background-color: blue;
+    border-radius: 7px ;
+}
+#output-box{
+    font-size: 2rem;
 }
