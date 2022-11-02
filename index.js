@@ -17,24 +17,30 @@ function showOutput(message){
 }
 
 function calculateProfitAndLoss(initial, quantity, current){
+    if ( initial <=0  || quantity <=0 || current <=0 ) {
+        showOutput(`Shares aren't for free my friend :) `);
+        
+    } else {
+        if(initial > current){
+            var loss = (initial - current) * quantity;
+            var lossPercentage = ((initial - current) / initial)* 100;
+            showOutput( `The loss is ${loss} and the 
+                loss percentage is ${lossPercentage} %`);
     
-    if(initial > current){
-        var loss = (initial - current) * quantity;
-        var lossPercentage = (loss / initial)* 100;
-        showOutput( `The loss is ${loss} and the 
-            loss percentage is ${lossPercentage} %`);
+        }
+        
+        else if(current > initial){
+            var profit = (current - initial ) * quantity;
+            var profitPercentage = ( (current - initial ) / initial ) * 100;
+            showOutput( `The profit is ${profit} and the 
+                profit percentage is ${profitPercentage} %`);
+        }
+        else{
+            showOutput( `No pain, no gain and vice-versa`);
+        }
+    }
+    
 
-    }
-    
-    else if(current > initial){
-        var profit = (current - initial ) * quantity;
-        var profitPercentage = ( profit / initial ) * 100;
-        showOutput( `The profit is ${profit} and the 
-            profit percentage is ${profitPercentage} %`);
-    }
-    else{
-        showOutput( `No pain, no gain and vice-versa`);
-    }
 }
 
 submitBtn.addEventListener('click', submitHandler );
